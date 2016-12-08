@@ -34,16 +34,18 @@ public class QuizCardBuilder {
 
 	public static void main(String[] args) {
 		//instantiate class
-		QuizCardBuilder gui = new QuizCardBuilder();
+		QuizCardBuilder builder = new QuizCardBuilder();
 		//run method to buil gui
-		gui.go();
+		builder.go();
 	}
 
-	//gui method
+	//go method
 	public void go() {
 
+		//create gui
 		//instantiate frame(window) and give it title
 		frame = new JFrame("Quiz Card Builder");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//instantiate panel on which all our elements will be
 		JPanel mainPanel = new JPanel();
 		//instantiate font with values
