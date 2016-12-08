@@ -142,8 +142,11 @@ public class QuizCardBuilder {
 	public class NextCardListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			//instantiate QuizCard
 			QuizCard card = new QuizCard(question.getText(), answer.getText());
+			//add card to list
 			cardList.add(card);
+			//clear card
 			clearCard();
 		}
 	}
@@ -152,22 +155,29 @@ public class QuizCardBuilder {
 	public class SaveMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			//instantiate QuizCard
 			QuizCard card = new QuizCard(question.getText(), answer.getText());
+			//add card to list
 			cardList.add(card);
 
+			//save file window
+			//all work with choosing file anf navigation
+			//JFileChooser will do for you
 			JFileChooser fileSave = new JFileChooser();
+			//send save file window to frame
 			fileSave.showSaveDialog(frame);
+			//program stopped and save window appears 
 			saveFile(fileSave.getSelectedFile());
-
 		}
-
 	}
 
 	//listener class, to be transmited inside listener on gui element
 	public class NewMenuListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			//clear ArrayList
 			cardList.clear();
+			//clear card
 			clearCard();
 		}
 	}
